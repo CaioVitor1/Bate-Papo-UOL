@@ -33,19 +33,43 @@ body{
 .conteudo-principal {
     margin-top: 26px;
 }
+.conteudo-principal h3 {
+    font-family: 'Roboto';
+    font-style: normal;
+   
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    
+    color: black;
+    
+    
+}
+
 .entrar-na-sala {
     background: #DCDCDC;
     border-radius: 2px;
     margin: 10px;
+    height: 40px;
+    display: flex;
+    align-items: center;
 }
 .mensagem-todos {
     
-    background: #FFFFFF;
+    background-color: #FFFFFF;
     border-radius: 2px;
     margin: 10px;
+    height: 40px;
+    display: flex;
+    align-items: center;
 }
 .mensagem-reservada {
-    background: #FFDEDE;
+    background-color: #FFDEDE;
     border-radius: 2px;
     margin: 10px;
+    height: 40px;
+    display: flex;
+    align-items: center;
 }
