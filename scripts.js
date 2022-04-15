@@ -25,8 +25,8 @@ function quandoSucesso() {
     console.log("Deu certo")
 }
 
-function quandoErro(erro) {
-    if (error.response.status === 409) {
+function quandoErro(error) {
+    if (error.response.status === 400) {
         alert("Um usuário com esse nome já está na sala. Por favor, digite um novo nome!");
         pegarNome()
       } 
@@ -71,31 +71,39 @@ function carregandoMensagens(mensagens) {
     renderizandoMensagens();
 }
 
+// Atualizando o chat de mensagens a cada 3 segundos
+function atualizandoChat() {
+    idInterval = setInterval(buscandomensagens, 3000);
+    console.log("O chat foi atualizado")
+}
+
+
+// Alimentando o body com as mensagens
 function renderizandoMensagens() {
     let todasAsMensagens = document.querySelector(".conteudo-principal");
      todasAsMensagens.innerHTML = ""
+     
      for (let i=0; i < pastaMensagens.length; i++) {
         if (pastaMensagens[i].type == "status") {
             todasAsMensagens.innerHTML += `<div class="entrar-na-sala">
-           <h3> (${pastaMensagens[i].time}) ${pastaMensagens[i].from}  ${pastaMensagens[i].text} </h3>
+            <h3> (${pastaMensagens[i].time}) &nbsp <strong>${pastaMensagens[i].from}</strong>&nbsp para &nbsp <strong>${pastaMensagens[i].to}</strong>: ${pastaMensagens[i].text} </h3>
      </div>
          `
         } else if (pastaMensagens[i].type == "message") {
             todasAsMensagens.innerHTML += `<div class="mensagem-todos">
-            <h3> (${pastaMensagens[i].time}) ${pastaMensagens[i].from}  ${pastaMensagens[i].text} </h3>
-     </div>
+            <h3> (${pastaMensagens[i].time}) &nbsp <strong>${pastaMensagens[i].from}</strong>&nbsp para &nbsp <strong>${pastaMensagens[i].to}</strong>: ${pastaMensagens[i].text} </h3>
          `
         }    
         else if (pastaMensagens[i].type == "private_message") {
             todasAsMensagens.innerHTML += `<div class="mensagem-reservada">
-            <h3> (${pastaMensagens[i].time}) ${pastaMensagens[i].from}  ${pastaMensagens[i].text} </h3>
+            <h3> (${pastaMensagens[i].time}) &nbsp <strong>${pastaMensagens[i].from}</strong>&nbsp para &nbsp <strong>${pastaMensagens[i].to}</strong>: ${pastaMensagens[i].text} </h3>
      </div>
          `
         }   
          
 
      }   
-
+atualizandoChat();
 
 }
 
@@ -105,6 +113,7 @@ function erroMensagens() {
     console.log("As mensagens não foram carregadas")
 }
 
+//  Enviando uma mensagem para a API
 
 function enviarMensagem() {
     console.log("O botão para enviar mensagem foi solicitado")
@@ -127,6 +136,8 @@ function enviarMensagem() {
 
 function sucessoEnvioMensagens() {
     console.log("A sua mensagem foi enviada PRA API")
+    const limpandoMensagem = document.querySelector(".mensagem").value
+    limpandoMensagem.value = "Escreva aqui..."
 }
 function erroEnvioMensagens() {
     console.log("A sua mensagem NÃO foi enviada API")

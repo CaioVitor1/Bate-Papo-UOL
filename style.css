@@ -8,6 +8,21 @@ body{
     background: #DCDCDC;
     font-family: 'Roboto', sans-serif;
 }
+strong {
+    font-weight: 500;
+  }
+.negrito{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    color: #AAAAAA;
+    
+    
+}
 .container {
     width: 400px;
     height: 5210px;
