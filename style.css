@@ -1,0 +1,51 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+}
+.container {
+    width: 400px;
+    background-color: #E5E5E5;
+    border: solid;
+    position: relative;
+}
+.topo {
+   
+    height: 80px;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: solid;
+}
+.topo > img {
+    width: 75px;
+    height: 53px;
+    padding-left: 10px;
+}
+.topo > ion-icon {
+    width: 75px;
+    height: 53px;
+}
+.conteudo-principal {
+    margin-top: 26px;
+}
+.entrar-na-sala {
+    background: #DCDCDC;
+    border-radius: 2px;
+    margin: 10px;
+}
+.mensagem-todos {
+    
+    background: #FFFFFF;
+    border-radius: 2px;
+    margin: 10px;
+}
+.mensagem-reservada {
+    background: #FFDEDE;
+    border-radius: 2px;
+    margin: 10px;
+}
