@@ -5,35 +5,35 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="reset.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet"> 
         <link rel="stylesheet" href="style.css">
         <title>Bate Papo Uol</title>
     </head>
 
     <body>
+        <div class="topo">
+            <img src="imagens/logo 1.png" alt="">
+            <ion-icon class="icone" name="people"></ion-icon>
+        </div>
+        
         <div class="container">
-            <div class="topo">
-                <img src="imagens/logo 1.png" alt="">
-                <ion-icon class="icone" name="people"></ion-icon>
-            </div>
 
             <div class="conteudo-principal">
-                <div class="entrar-na-sala">
-                    oin 
-                </div>
-
-                <div class="mensagem-todos">
-                    oi
-                </div>
-
-                <div class="mensagem-reservada">
-                    oi
-                </div>
+                
 
             </div>
 
+        </div>
 
-
-
+        <div class="rodape">
+            <div class="caixa-mensagem">
+                <input class="mensagem" type="text" name="mensagem" maxlength="100" value="Escreva aqui..."> 
+            </div>
+            <div class="botao-enviar-mensagem">
+                <ion-icon onclick="enviarMensagem()" name="paper-plane-outline"></ion-icon>
+            </div>
         </div>
         
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

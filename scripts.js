@@ -1,6 +1,8 @@
 
 let nome;
 let pastaMensagens = []  //Array que irá abrigar todas as mensagens da API
+let todos = "todos"
+let message = "message"
 
 // Entrando na sala, pegando o nome do usuário
 function pegarNome() {
@@ -104,7 +106,31 @@ function erroMensagens() {
 }
 
 
+function enviarMensagem() {
+    console.log("O botão para enviar mensagem foi solicitado")
+    const conteudo = document.querySelector(".mensagem").value
+    console.log(conteudo)
 
+    const novaMensagem = {
+        from: nome,
+        to: todos,
+        text: conteudo,
+        type: message
+    }
+
+    const promise = axios.post("https://mock-api.driven.com.br/api/v6/uol/messages", novaMensagem);
+
+    promise.then(sucessoEnvioMensagens);
+    promise.catch(erroEnvioMensagens);
+
+}
+
+function sucessoEnvioMensagens() {
+    console.log("A sua mensagem foi enviada PRA API")
+}
+function erroEnvioMensagens() {
+    console.log("A sua mensagem NÃO foi enviada API")
+}
 
 
 
