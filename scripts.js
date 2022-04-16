@@ -103,7 +103,8 @@ function renderizandoMensagens() {
          
 
      }   
-atualizandoChat();
+setTimeout(buscandomensagens, 3000)
+
 
 }
 
