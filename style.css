@@ -25,7 +25,7 @@ strong {
 }
 .container {
     width: 400px;
-    height: 5210px;
+    height: 5250px;
     background-color: #E5E5E5;
 
     
@@ -64,19 +64,27 @@ strong {
 .conteudo-principal h3 {
     font-family: 'Roboto';
     font-style: normal;
-   
+    width: 100%;
     font-weight: 400;
     font-size: 14px;
     line-height: 16px;
     display: flex;
     align-items: center;
-    
+    flex-wrap: wrap;
     color: black;
     
     
 }
 
 .entrar-na-sala {
+    background: #DCDCDC;
+    border-radius: 2px;
+    margin: 10px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+.entrar-na-sala-ultima {
     background: #DCDCDC;
     border-radius: 2px;
     margin: 10px;
@@ -93,7 +101,24 @@ strong {
     display: flex;
     align-items: center;
 }
+.mensagem-todos-ultima {
+    
+    background-color: #FFFFFF;
+    border-radius: 2px;
+    margin: 10px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
 .mensagem-reservada {
+    background-color: #FFDEDE;
+    border-radius: 2px;
+    margin: 10px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+.mensagem-reservada-todos {
     background-color: #FFDEDE;
     border-radius: 2px;
     margin: 10px;
@@ -146,4 +171,7 @@ strong {
     justify-content: center;
     align-items: center;
     
+}
+.mensagem {
+    flex-wrap: wrap;
 }

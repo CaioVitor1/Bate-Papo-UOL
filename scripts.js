@@ -71,19 +71,13 @@ function carregandoMensagens(mensagens) {
     renderizandoMensagens();
 }
 
-// Atualizando o chat de mensagens a cada 3 segundos
-function atualizandoChat() {
-    idInterval = setInterval(buscandomensagens, 3000);
-    console.log("O chat foi atualizado")
-}
-
-
 // Alimentando o body com as mensagens
 function renderizandoMensagens() {
     let todasAsMensagens = document.querySelector(".conteudo-principal");
      todasAsMensagens.innerHTML = ""
      
      for (let i=0; i < pastaMensagens.length; i++) {
+        // Primeiras mensagens
         if (pastaMensagens[i].type == "status") {
             todasAsMensagens.innerHTML += `<div class="entrar-na-sala">
             <h3> (${pastaMensagens[i].time}) &nbsp <strong>${pastaMensagens[i].from}</strong>&nbsp para &nbsp <strong>${pastaMensagens[i].to}</strong>: ${pastaMensagens[i].text} </h3>
@@ -100,15 +94,24 @@ function renderizandoMensagens() {
      </div>
          `
         }   
-         
+    }
 
-     }   
+
+
+    scrollToBottom()
+           
+    
+        
+     
 setTimeout(buscandomensagens, 3000)
 
 
 }
 
-
+function scrollToBottom() {
+    let todasAsMensagens = document.querySelector(".conteudo-principal");
+    todasAsMensagens.scrollIntoView(false);
+  }
 
 function erroMensagens() {
     console.log("As mensagens não foram carregadas")
