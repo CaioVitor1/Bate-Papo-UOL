@@ -6,7 +6,8 @@ let message = "message"
 
 // Entrando na sala, pegando o nome do usuário
 function pegarNome() {
-     nome = prompt("Olá, bem-vindo ao nosso bate-papo. Qual seu nome?")
+     nome = document.querySelector(".caixa-nome").value
+    
     
     let bemVindo = {
         name: nome
@@ -19,16 +20,23 @@ function pegarNome() {
     //Mantendo o usuário online
     mantendoConexao();
     buscandomensagens();
+
+    
+
 }
 
 function quandoSucesso() {
     console.log("Deu certo")
+    let abrindoMensagens = document.querySelector(".container")
+    let fechandoTelaDeEntrada = document.querySelector(".tela-de-entrada")
+    abrindoMensagens.classList.add("ligando-display")
+    fechandoTelaDeEntrada.classList.add("desligando-display")
 }
 
 function quandoErro(error) {
     if (error.response.status === 400) {
         alert("Um usuário com esse nome já está na sala. Por favor, digite um novo nome!");
-        pegarNome()
+        
       } 
 
     console.log("Status novo code: " + erro.response.status); 
@@ -88,7 +96,7 @@ function renderizandoMensagens() {
             <h3> (${pastaMensagens[i].time}) &nbsp <strong>${pastaMensagens[i].from}</strong>&nbsp para &nbsp <strong>${pastaMensagens[i].to}</strong>: ${pastaMensagens[i].text} </h3>
          `
         }    
-        else if (pastaMensagens[i].type == "private_message") {
+        else if ((pastaMensagens[i].type == "private_message") && ((pastaMensagens[i].to === nome) || (pastaMensagens[i].from === nome))) {
             todasAsMensagens.innerHTML += `<div class="mensagem-reservada">
             <h3> (${pastaMensagens[i].time}) &nbsp <strong>${pastaMensagens[i].from}</strong>&nbsp para &nbsp <strong>${pastaMensagens[i].to}</strong>: ${pastaMensagens[i].text} </h3>
      </div>
@@ -149,4 +157,4 @@ function erroEnvioMensagens() {
 
 
 
-pegarNome()
+
