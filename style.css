@@ -27,11 +27,13 @@ strong {
     margin-top: 0px;
     margin-bottom: 0px;
     width: 400px;
-    height: 5250px;
+    height: 580px;
     background-color: #E5E5E5;
     display: none;
-    
     position: relative;
+    
+    border-color: green;
+    height: 5200px;
 }
 .topo {
     position: fixed;
@@ -59,7 +61,7 @@ strong {
   
     position: absolute;
     top: 80px;
-    bottom: 120px;
+   bottom: 20px;
     width: 400px;
     background: #E5E5E5;
     

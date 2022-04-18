@@ -20,7 +20,7 @@
         
         <div class="tela-de-entrada">
             <img src="imagens/logo 1.png" alt="">
-            <input class="caixa-nome" type="text" name="mensagem" maxlength="100" value="digite seu nome"> 
+            <input onfocus="this.value=''"  class="caixa-nome" type="text" name="mensagem" maxlength="100" value="digite seu nome"> 
             <button class="texto-botao" onclick="pegarNome()"> Entrar</button>
         </div>
 
@@ -37,7 +37,7 @@
 
         <div class="rodape">
             <div class="caixa-mensagem">
-                <input class="mensagem" type="text" name="mensagem" maxlength="100" value="Escreva aqui..."> 
+                <input onfocus="this.value=''" class="mensagem" type="text" name="mensagem" maxlength="100" value="Escreva aqui..."> 
             </div>
             <div class="botao-enviar-mensagem">
                 <ion-icon onclick="enviarMensagem()" name="paper-plane-outline"></ion-icon>

@@ -37,7 +37,10 @@ function quandoErro(error) {
     if (error.response.status === 400) {
         alert("Um usuário com esse nome já está na sala. Por favor, digite um novo nome!");
         
-      } 
+      } else if (error.response.status === 200) {
+        console.log("Tudo certo");
+        
+      }
 
     console.log("Status novo code: " + erro.response.status); 
 	console.log("Mensagem de erro: " + erro.response.data);
@@ -148,13 +151,23 @@ function enviarMensagem() {
 
 function sucessoEnvioMensagens() {
     console.log("A sua mensagem foi enviada PRA API")
-    const limpandoMensagem = document.querySelector(".mensagem").value
-    limpandoMensagem.value = "Escreva aqui..."
+   let mensagem = document.querySelector(".mensagem").value = ''
+  
+    
 }
 function erroEnvioMensagens() {
     console.log("A sua mensagem NÃO foi enviada API")
+    window.location.reload()
+
 }
 
 
+document.addEventListener("keypress", function(clique) {
+    if(clique.key == "Enter") {
+        const btn = document.querySelector(".mensagem")
+        enviarMensagem()
+        
+    } 
+})
 
 
