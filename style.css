@@ -24,15 +24,13 @@ strong {
     
 }
 .container {
-    margin-top: 0px;
-    margin-bottom: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     width: 400px;
     height: 580px;
     background-color: #E5E5E5;
     display: none;
     position: relative;
-    
-    border-color: green;
     height: 5200px;
 }
 .topo {
@@ -58,7 +56,6 @@ strong {
 }
 .conteudo-principal {
     margin-top: 26px;
-  
     position: absolute;
     top: 80px;
    bottom: 20px;
@@ -90,14 +87,6 @@ strong {
     display: flex;
     align-items: center;
 }
-.entrar-na-sala-ultima {
-    background: #DCDCDC;
-    border-radius: 2px;
-    margin: 10px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-}
 .mensagem-todos {
     
     background-color: #FFFFFF;
@@ -107,15 +96,7 @@ strong {
     display: flex;
     align-items: center;
 }
-.mensagem-todos-ultima {
-    
-    background-color: #FFFFFF;
-    border-radius: 2px;
-    margin: 10px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-}
+
 .mensagem-reservada {
     background-color: #FFDEDE;
     border-radius: 2px;
@@ -124,14 +105,7 @@ strong {
     display: flex;
     align-items: center;
 }
-.mensagem-reservada-todos {
-    background-color: #FFDEDE;
-    border-radius: 2px;
-    margin: 10px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-}
+
 .rodape {
     width: 400px;
     height: 80px;

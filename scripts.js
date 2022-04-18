@@ -62,6 +62,7 @@ function conexao() {
 
 function quandoSucessoConexao() {
     console.log("Estamos mantendo você conectado")
+    
 }
 function quandoErroConexao() {
     console.log("Não estamos mantendo você conectado")
@@ -91,7 +92,7 @@ function renderizandoMensagens() {
         // Primeiras mensagens
         if (pastaMensagens[i].type == "status") {
             todasAsMensagens.innerHTML += `<div class="entrar-na-sala">
-            <h3> (${pastaMensagens[i].time}) &nbsp <strong>${pastaMensagens[i].from}</strong>&nbsp para &nbsp <strong>${pastaMensagens[i].to}</strong>: ${pastaMensagens[i].text} </h3>
+            <h3> (${pastaMensagens[i].time}) &nbsp <strong>${pastaMensagens[i].from}</strong>&nbsp ${pastaMensagens[i].text} </h3>
      </div>
          `
         } else if (pastaMensagens[i].type == "message") {
